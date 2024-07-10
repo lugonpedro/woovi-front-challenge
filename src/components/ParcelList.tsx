@@ -3,7 +3,7 @@ import { Parcel } from "./Parcel";
 
 export function ParcelList() {
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+    <List>
       <Parcel
         parcels={2}
         total={30600}
