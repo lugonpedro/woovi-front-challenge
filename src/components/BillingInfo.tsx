@@ -33,7 +33,7 @@ export function BillingInfo({}) {
       </div>
       <div className="flex flex-col items-center">
         <p className="text-[#B2B2B2] font-semibold">Identificador:</p>
-        <p className="text-[#4D4D4D] font-extrabold">
+        <p className="text-[#4D4D4D] text-[12px] font-extrabold">
           2c1b951f356c4680b13ba1c9fc889c47
         </p>
       </div>
