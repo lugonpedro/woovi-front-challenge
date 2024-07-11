@@ -5,7 +5,7 @@ import { ParcelList } from "../components/ParcelList";
 import { BillingStore } from "../contexts/BillingStore";
 
 export function LandingPage() {
-  const { setBilling } = BillingStore();
+  const { billing, setBilling } = BillingStore();
 
   return (
     <div className="flex flex-col gap-2 w-full max-w-[1280px] mx-auto">
@@ -25,8 +25,8 @@ export function LandingPage() {
             setBilling({
               parcels: [30500],
               total: 30500,
-              pix: false,
-              card: false,
+              pix: billing.pix,
+              card: billing.card,
             });
           }}
         />
