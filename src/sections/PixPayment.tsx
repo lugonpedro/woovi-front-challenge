@@ -44,7 +44,7 @@ export default function PixPayment() {
           className="border-[#03D69D] border-2 rounded-xl p-2"
         />
         <Button onClick={() => nextStep()}>
-          Copiar QRCode <img src={pagesIcon} className="bg-[#133A6F]" />
+          Copiar QR Code <img src={pagesIcon} className="bg-[#133A6F]" />
         </Button>
       </div>
       <div className="flex flex-col items-center px-12">
