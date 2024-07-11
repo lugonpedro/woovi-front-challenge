@@ -2,22 +2,25 @@ import { Divider } from "@mui/material";
 import { BillingStore } from "../contexts/BillingStore";
 import { formatNumberToLocale } from "../utils/formatNumberToLocale";
 import { BulletList } from "./BulletList";
+import { HowItWorks } from "./HowItWorks";
 
 export function BillingInfo({}) {
   const { billing } = BillingStore();
 
   return (
     <>
-      <div className="flex flex-col px-4">
+      <div className="flex flex-col gap-4 px-4 my-4">
         <BulletList parcels={billing.parcels} />
         <Divider />
         <div className="flex flex-row justify-between">
-          <p>CET: 0,5%</p>
-          <p>Total: {formatNumberToLocale(billing.total)}</p>
+          <p className="font-semibold">CET: 0,5%</p>
+          <p className="font-semibold">
+            Total: {formatNumberToLocale(billing.total)}
+          </p>
         </div>
         <Divider />
-        <p>Como funciona?</p>
-        <Divider></Divider>
+        <HowItWorks />
+        <Divider />
       </div>
       <div className="flex flex-col items-center">
         <p>Identificador:</p>
