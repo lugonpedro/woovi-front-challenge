@@ -36,7 +36,7 @@ export default function PixPayment() {
         João, pague a {billing.parcels.length > 1 ? "entrada" : "parcela"} de{" "}
         {formatNumberToLocale(billing.total / billing.parcels.length)} pelo Pix
       </h2>
-      <div className="flex flex-col gap-4 items-center px-12">
+      <div className="flex flex-col gap-4 items-center py-4 px-12">
         <img
           src={qrCode}
           className="border-[#03D69D] border-2 rounded-xl p-2"

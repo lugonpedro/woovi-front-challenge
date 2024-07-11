@@ -35,7 +35,7 @@ export default function CreditPayment() {
       <h2 className="text-center font-extrabold text-[#4D4D4D]">
         João, pague o restante em {billing.parcels.length}x no cartão
       </h2>
-      <div className="flex flex-col gap-4 px-4">
+      <div className="flex flex-col gap-4 p-4">
         <Input
           placeholder="Nome completo"
           value={name}

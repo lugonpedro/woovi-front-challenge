@@ -58,7 +58,7 @@ export function Parcel({
         {promo && (
           <div className="relative">
             <div className="promo">
-              <p className="text-[10px] font-extrabold text-[#FFFFFF] bg-[#133A6F] p-2 pr-8 w-full max-h-8">
+              <p className="text-[8px] font-extrabold text-[#FFFFFF] bg-[#133A6F] px-2 py-2.5 pr-8 w-full h-8 md:text-[12px] md:py-2">
                 {promoText}
               </p>
             </div>

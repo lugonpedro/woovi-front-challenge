@@ -69,5 +69,5 @@
 }
 
 .defaultContainer {
-  @apply flex flex-col gap-2 w-full max-w-[1280px] mx-auto px-4;
+  @apply flex flex-col gap-2 w-full max-w-[900px] mx-auto px-4;
 }
