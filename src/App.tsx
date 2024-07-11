@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { Toaster } from "./components/ui/toaster";
 import { BillingStore } from "./contexts/BillingStore";
 import Congrats from "./sections/Congrats";
 import CreditPayment from "./sections/CreditPayment";
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="flex flex-col">
+      <Toaster />
       <AnimatePresence>
         {billing.total === 0 &&
           billing.pix === false &&
