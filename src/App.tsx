@@ -18,7 +18,7 @@ function App() {
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -200, opacity: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 1 }}
               key="landing"
             >
               <LandingPage />
@@ -39,10 +39,30 @@ function App() {
           )}
         {billing.total !== 0 &&
           billing.pix === true &&
-          billing.card === false && <CreditPayment />}
+          billing.card === false && (
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -200, opacity: 0 }}
+              transition={{ duration: 1 }}
+              key="credit"
+            >
+              <CreditPayment />
+            </motion.div>
+          )}
         {billing.total !== 0 &&
           billing.pix === true &&
-          billing.card === true && <Congrats />}
+          billing.card === true && (
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -200, opacity: 0 }}
+              transition={{ duration: 1 }}
+              key="congrats"
+            >
+              <Congrats />
+            </motion.div>
+          )}
       </AnimatePresence>
     </div>
   );
