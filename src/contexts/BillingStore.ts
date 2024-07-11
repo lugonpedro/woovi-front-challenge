@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 interface BillingProps {
-  parcels: number;
+  parcels: number[];
   total: number;
   pix: boolean;
   card: boolean;
@@ -13,6 +13,6 @@ type BillingStoreProps = {
 };
 
 export const BillingStore = create<BillingStoreProps>((set) => ({
-  billing: { parcels: 0, total: 0, pix: false, card: false },
+  billing: { parcels: [], total: 0, pix: false, card: false },
   setBilling: (billing: BillingProps) => set(() => ({ billing: billing })),
 }));

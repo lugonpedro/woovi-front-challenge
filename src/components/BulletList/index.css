@@ -1,0 +1,33 @@
+li {
+  position: relative;
+  margin: 0;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+li:not(:last-child)::before {
+  background-color: #e5e5e5;
+  width: 2px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 5px;
+}
+
+li::after {
+  content: "";
+  position: absolute;
+  border: #e5e5e5 2px solid;
+  left: 0;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.test {
+  border: #03d69d 2px solid;
+}

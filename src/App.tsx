@@ -9,10 +9,9 @@ function App() {
   const { billing } = BillingStore();
 
   return (
-    <div className="flex flex-col xl:items-center">
+    <div className="flex flex-col">
       <AnimatePresence>
-        {billing.parcels === 0 &&
-          billing.total === 0 &&
+        {billing.total === 0 &&
           billing.pix === false &&
           billing.card === false && (
             <motion.div
@@ -25,8 +24,7 @@ function App() {
               <LandingPage />
             </motion.div>
           )}
-        {billing.parcels !== 0 &&
-          billing.total !== 0 &&
+        {billing.total !== 0 &&
           billing.pix === false &&
           billing.card === false && (
             <motion.div
@@ -39,12 +37,10 @@ function App() {
               <PixPayment />
             </motion.div>
           )}
-        {billing.parcels !== 0 &&
-          billing.total !== 0 &&
+        {billing.total !== 0 &&
           billing.pix === true &&
           billing.card === false && <CreditPayment />}
-        {billing.parcels !== 0 &&
-          billing.total !== 0 &&
+        {billing.total !== 0 &&
           billing.pix === true &&
           billing.card === true && <Congrats />}
       </AnimatePresence>
