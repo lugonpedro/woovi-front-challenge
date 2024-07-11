@@ -7,7 +7,7 @@ export function LandingPage() {
   const { billing, setBilling } = BillingStore();
 
   return (
-    <div className="flex flex-col gap-2 w-full max-w-[1280px] mx-auto">
+    <div className="defaultContainer">
       <Header />
       <h2 className="text-center font-extrabold text-[#4D4D4D]">
         João, como você quer pagar?
