@@ -8,7 +8,10 @@ export default function Congrats() {
       <h2 className="text-center font-extrabold text-[#4D4D4D]">
         João, obrigado por comprar conosco!
       </h2>
-      <img src={congratsIcon} />
+      <img
+        src={congratsIcon}
+        className="w-[300px] mx-auto h-auto max-h-[50vh]"
+      />
     </div>
   );
 }
