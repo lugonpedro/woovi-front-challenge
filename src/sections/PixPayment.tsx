@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import pagesIcon from "../assets/pages.png";
 import qrCode from "../assets/qrcode.png";
 import { BillingInfo } from "../components/BillingInfo";
@@ -11,13 +10,26 @@ import { formatNumberToLocale } from "../utils/formatNumberToLocale";
 export default function PixPayment() {
   const today = new Date();
   today.setMinutes(today.getMinutes() + 5);
-  const { billing } = BillingStore();
+  const { billing, setBilling } = BillingStore();
 
-  useEffect(() => {
-    if (billing && billing.parcels.length > 0) {
-      console.log(billing);
+  function nextStep() {
+    if (billing.parcels.length === 1) {
+      console.log("Pago com sucesso");
+      setBilling({
+        parcels: billing.parcels,
+        total: billing.total,
+        pix: true,
+        card: true,
+      });
+    } else {
+      setBilling({
+        parcels: billing.parcels,
+        total: billing.total,
+        pix: true,
+        card: billing.card,
+      });
     }
-  }, [billing]);
+  }
 
   return (
     <div className="flex flex-col gap-2 w-full max-w-[1280px] mx-auto">
@@ -28,7 +40,7 @@ export default function PixPayment() {
       </h2>
       <div className="flex flex-col gap-4 items-center px-12">
         <img src={qrCode} className="border-[#03D69D] border-2 rounded-xl" />
-        <Button>
+        <Button onClick={() => nextStep()}>
           Copiar QRCode <img src={pagesIcon} className="bg-[#133A6F]" />
         </Button>
       </div>
