@@ -1,7 +1,6 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import { useState } from "react";
 import { formatNumberToLocale } from "../../utils/formatNumberToLocale";
+import { Card, CardContent } from "../ui/card";
 import "./index.css";
 
 interface ParcelProps {
@@ -27,15 +26,14 @@ export function Parcel({
 
   return (
     <Card
-      variant="outlined"
-      className="first:before:rounded-xl first:before:font-extrabold first:before:text-[14px] first:before:py-0.5 first:before:px-4 first:before:bg-[#E5E5E5] first:before:ml-3 first:before:-mt-3 first:before:absolute first:before:content-[attr(before-dynamic-value)] first:rounded-t-xl last:rounded-b-xl cursor-pointer "
+      className="first:before:rounded-xl first:before:font-extrabold first:before:text-[14px] first:before:py-0.5 first:before:px-4 first:before:bg-[#E5E5E5] first:before:ml-3 first:before:-mt-3 first:before:absolute first:before:content-[attr(before-dynamic-value)] rounded-none first:rounded-t-xl last:rounded-b-xl cursor-pointer"
       before-dynamic-value={tag}
       onClick={() => {
         setChecked(!checked);
         onClick();
       }}
     >
-      <CardContent className="flex flex-col gap-2">
+      <CardContent className="flex flex-col gap-2 mt-4">
         <div className="flex flex-row justify-between">
           <div>
             <p className="text-[18px]">
