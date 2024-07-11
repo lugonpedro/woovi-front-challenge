@@ -16,7 +16,7 @@
   margin-right: -18px;
 }
 
-input[type="radio"] {
+.parcelInput {
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
@@ -28,11 +28,11 @@ input[type="radio"] {
   border-radius: 50%;
 }
 
-input[type="radio"]:checked {
+.parcelInput:checked {
   background-color: #03d69d;
 }
 
-input[type="radio"]:checked::after {
+.parcelInput:checked::after {
   content: "✓";
   margin-left: 4px;
 }

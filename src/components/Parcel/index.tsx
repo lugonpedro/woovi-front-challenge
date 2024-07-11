@@ -52,7 +52,7 @@ export function Parcel({
             )}
           </div>
           <div>
-            <input type="radio" checked={checked} />
+            <input type="radio" checked={checked} className="parcelInput" />
           </div>
         </div>
         {promo && (
