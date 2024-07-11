@@ -15,8 +15,8 @@ export function BulletList({ parcels }: BulletListProps) {
         <li
           className={
             billing.pix
-              ? "flex flex-row justify-between green-border"
-              : "flex flex-row justify-between"
+              ? "flex flex-row justify-between bullet green-border"
+              : "flex flex-row justify-between bullet"
           }
         >
           <p className="text-[16px]">
