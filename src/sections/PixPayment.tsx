@@ -4,6 +4,7 @@ import { BillingInfo } from "../components/BillingInfo";
 import { Button } from "../components/Button";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { toast } from "../components/ui/use-toast";
 import { BillingStore } from "../contexts/BillingStore";
 import { formatNumberToLocale } from "../utils/formatNumberToLocale";
 
@@ -11,8 +12,22 @@ export default function PixPayment() {
   const { billing, setBilling } = BillingStore();
 
   function nextStep() {
+    toast({
+      title: "Pagamento via Pix confirmado",
+      description: `${
+        billing.parcels.length === 1
+          ? ""
+          : "Você será redirecionado para o pagamento no cartão"
+      }`,
+    });
+
+    setTimeout(() => {
+      redirect();
+    }, 3000);
+  }
+
+  function redirect() {
     if (billing.parcels.length === 1) {
-      console.log("Pago com sucesso");
       setBilling({
         parcels: billing.parcels,
         total: billing.total,
