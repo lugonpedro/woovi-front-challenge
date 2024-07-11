@@ -39,7 +39,10 @@ export default function PixPayment() {
         {formatNumberToLocale(billing.total / billing.parcels.length)} pelo Pix
       </h2>
       <div className="flex flex-col gap-4 items-center px-12">
-        <img src={qrCode} className="border-[#03D69D] border-2 rounded-xl" />
+        <img
+          src={qrCode}
+          className="border-[#03D69D] border-2 rounded-xl p-2"
+        />
         <Button onClick={() => nextStep()}>
           Copiar QRCode <img src={pagesIcon} className="bg-[#133A6F]" />
         </Button>
