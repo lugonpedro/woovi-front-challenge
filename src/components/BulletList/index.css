@@ -28,6 +28,10 @@ li::after {
   background-color: #fff;
 }
 
-.test {
+li:first-child::after {
+  border: #03d69d 2px solid;
+}
+
+.green-border::after {
   border: #03d69d 2px solid;
 }
