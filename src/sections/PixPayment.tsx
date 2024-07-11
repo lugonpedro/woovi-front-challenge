@@ -8,8 +8,6 @@ import { BillingStore } from "../contexts/BillingStore";
 import { formatNumberToLocale } from "../utils/formatNumberToLocale";
 
 export default function PixPayment() {
-  const today = new Date();
-  today.setMinutes(today.getMinutes() + 5);
   const { billing, setBilling } = BillingStore();
 
   function nextStep() {
@@ -46,12 +44,6 @@ export default function PixPayment() {
         <Button onClick={() => nextStep()}>
           Copiar QR Code <img src={pagesIcon} className="bg-[#133A6F]" />
         </Button>
-      </div>
-      <div className="flex flex-col items-center px-12">
-        <p className="text-[#B2B2B2] text-[16px]">Prazo de pagamento:</p>
-        <p className="text-[#4D4D4D] text-[16px] font-extrabold">
-          {today.toLocaleString("pt-br").substring(0, 17)}
-        </p>
       </div>
       <BillingInfo />
       <Footer />

@@ -7,8 +7,17 @@ import { HowItWorks } from "./HowItWorks";
 export function BillingInfo({}) {
   const { billing } = BillingStore();
 
+  const today = new Date();
+  today.setMinutes(today.getMinutes() + 5);
+
   return (
     <>
+      <div className="flex flex-col items-center px-12">
+        <p className="text-[#B2B2B2] text-[16px]">Prazo de pagamento:</p>
+        <p className="text-[#4D4D4D] text-[16px] font-extrabold">
+          {today.toLocaleString("pt-br").substring(0, 17)}
+        </p>
+      </div>
       <div className="flex flex-col gap-4 px-4 my-4">
         <BulletList parcels={billing.parcels} />
         <Divider />
